@@ -97,43 +97,108 @@ total_score = (
 Based on scores, funciton `sort_candidates` sort candidates.
 If there are some who has same score, then the function `calculate_requirement_match_score` resort according to the requirements.
 
+This is sample input JSON format.
 ```json
-candidate1 = {
-    "Name": "Andre Cain",
-    "Education Level": "Phd",
-    "Years of Experience": 13,
-    "Skills": ["Python", "Java", "Machine Learning"],
-    "Certifications": ["AWS Certified Cloud Practitioner"],
-    "References": ["Ref1", "Ref2"],
-    "Cultural Fit": 8,
-}
-candidate2 = {
-    "Name": "John Lee",
-    "Education Level": "Master's",
-    "Years of Experience": 8,
-    "Skills": ["Python", "Java", "C++", "Machine Learning"],
-    "Certifications": ["AWS Certified Computing Engineer"],
-    "References": ["Ref1"],
-    "Cultural Fit": 4,
-}
-candidate3 = {
-    "Name": "Christopher Martin",
-    "Education Level": "Bachelor's",
-    "Years of Experience": 10,
-    "Skills": ["Python", "Java", "Machine Learning", "Deep Learning", "C++", "Computer Vision", "NLP"],
-    "Certifications": ["AWS Certified Cloud Practitioner", "Cert1", "Cert2"],
-    "References": ["Ref1", "Ref2", "Ref3"],
-    "Cultural Fit": 5,
-}
-
-candidate4 = {
-    "Name": "Christopher Wilson",
-    "Education Level": "Bachelor's",
-    "Years of Experience": 12,
-    "Skills": ["Python", "Java", "Machine Learning", "Deep Learning", "C++", "Computer Vision", "NLP"],
-    "Certifications": ["AWS Certified Cloud Practitioner", "Cert1", "Cert2"],
-    "References": ["Ref1", "Ref2", "Ref3"],
-    "Cultural Fit": 5,
+{
+    "candidates": [
+        {
+            "name": "Andre Cain",
+            "education_level": "Phd",
+            "years_of_experience": 13,
+            "skills": [
+                "Python",
+                "Java",
+                "Machine Learning"
+            ],
+            "certifications": [
+                "AWS Certified Cloud Practitioner"
+            ],
+            "references": [
+                "Ref1",
+                "Ref2"
+            ],
+            "cultural_fit": 8
+        },
+        {
+            "name": "John Lee",
+            "education_level": "Master's",
+            "years_of_experience": 8,
+            "skills": [
+                "Python",
+                "Java",
+                "C++",
+                "Machine Learning"
+            ],
+            "certifications": [
+                "AWS Certified Computing Engineer"
+            ],
+            "references": [
+                "Ref1"
+            ],
+            "cultural_fit": 4
+        },
+        {
+            "name": "Christopher Martin",
+            "education_level": "Bachelor's",
+            "years_of_experience": 10,
+            "skills": [
+                "Python",
+                "Java",
+                "Machine Learning",
+                "Deep Learning",
+                "C++",
+                "Computer Vision",
+                "NLP"
+            ],
+            "certifications": [
+                "AWS Certified Cloud Practitioner",
+                "Cert1",
+                "Cert2"
+            ],
+            "references": [
+                "Ref1",
+                "Ref2",
+                "Ref3"
+            ],
+            "cultural_fit": 5
+        },
+        {
+            "name": "Christopher Wilson",
+            "education_level": "Bachelor's",
+            "years_of_experience": 12,
+            "skills": [
+                "Python",
+                "Java",
+                "Machine Learning",
+                "Deep Learning",
+                "C++",
+                "Computer Vision",
+                "NLP"
+            ],
+            "certifications": [
+                "AWS Certified Cloud Practitioner",
+                "Cert1",
+                "Cert2"
+            ],
+            "references": [
+                "Ref1",
+                "Ref2",
+                "Ref3"
+            ],
+            "cultural_fit": 5
+        }
+    ],
+    "requirements": {
+        "education_level": "PhD",
+        "years_of_experience": 10,
+        "skills": [
+            "Python",
+            "Machine Learning"
+        ],
+        "certifications": [
+            "AWS Certified Cloud Practitioner"
+        ]
+    }
 }
 ```
 
