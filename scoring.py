@@ -1,4 +1,7 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
 
 criteria_weights = {
     "Education Level": 0.2,
@@ -127,6 +130,24 @@ def cal_score(candidate):
     return total_score
 
 
+class ScoringItem(BaseModel):
+    candidates: list
+    scores: list
+    requirements: object
+
+app.post("/scoring")
+def scoring(item: ScoringItem):
+    candidates = item.candidates
+    scores = [cal_score(cand) for cand in candidates]
+    requirements = item.requirements
+    sorted_candidates = sort_candidates(candidates, scores, requirements)
+
+    print("Candidates sorted by score (highest to lowest) with requirement tiebreaker:")
+    for candidate in sorted_candidates:
+        print(candidate["Name"])
+    
+    return sorted_candidates
+
 def sort_candidates(candidates, scores, requirements):
     """
     Sorts a list of candidates based on scores and requirements (in case of ties).
@@ -199,17 +220,20 @@ def calculate_requirement_match_score(candidate, requirements):
 
 
 
-scores = [cal_score(can) for can in candidates]
+# scores = [cal_score(can) for can in candidates]
 
-requirements = {
-  "Education Level": "Master's",
-  "Years of Experience": 10,
-  "Skills": ["Python", "Machine Learning"],
-  "Certifications": ["AWS Certified Cloud Practitioner"],
-}
+# requirements = {
+#   "Education Level": "Master's",
+#   "Years of Experience": 10,
+#   "Skills": ["Python", "Machine Learning"],
+#   "Certifications": ["AWS Certified Cloud Practitioner"],
+# }
 
-sorted_candidates = sort_candidates(candidates, scores, requirements)
+# sorted_candidates = sort_candidates(candidates, scores, requirements)
 
-print("Candidates sorted by score (highest to lowest) with requirement tiebreaker:")
-for candidate in sorted_candidates:
-  print(candidate["Name"])
+# print("Candidates sorted by score (highest to lowest) with requirement tiebreaker:")
+# for candidate in sorted_candidates:
+#   print(candidate["Name"])
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)

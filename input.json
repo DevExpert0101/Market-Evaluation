@@ -1,0 +1,47 @@
+{
+    "candidates": [
+      {
+      "name": "Andre Cain",
+      "education_level": "Phd",
+      "years_of_experience": 13,
+      "skills": ["Python", "Java", "Machine Learning"],
+      "certifications": ["AWS Certified Cloud Practitioner"],
+      "references": ["Ref1", "Ref2"],
+      "cultural_fit": 8
+  },{
+      "name": "John Lee",
+      "education_level": "Master's",
+      "years_of_experience": 8,
+      "skills": ["Python", "Java", "C++", "Machine Learning"],
+      "certifications": ["AWS Certified Computing Engineer"],
+      "references": ["Ref1"],
+      "cultural_fit": 4
+  },{
+      "name": "Christopher Martin",
+      "education_level": "Bachelor's",
+      "years_of_experience": 10,
+      "skills": ["Python", "Java", "Machine Learning", "Deep Learning", "C++", "Computer Vision", "NLP"],
+      "certifications": ["AWS Certified Cloud Practitioner", "Cert1", "Cert2"],
+      "references": ["Ref1", "Ref2", "Ref3"],
+      "cultural_fit": 5
+  },{
+      "name": "Christopher Wilson",
+      "education_level": "Bachelor's",
+      "years_of_experience": 12,
+      "skills": ["Python", "Java", "Machine Learning", "Deep Learning", "C++", "Computer Vision", "NLP"],
+      "certifications": ["AWS Certified Cloud Practitioner", "Cert1", "Cert2"],
+      "references": ["Ref1", "Ref2", "Ref3"],
+      "cultural_fit": 5
+  }
+    ],
+    "requirements": {
+      "education_level": "PhD",
+      "years_of_experience": 10,
+      "skills": [
+         "Python", "Machine Learning"
+      ],
+      "certifications": [
+       "AWS Certified Cloud Practitioner"
+      ]
+    }
+  }
